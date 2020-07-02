@@ -10,9 +10,9 @@ from erpnext_quota import __version__ as version
 setup(
 	name='erpnext_quota',
 	version=version,
-	description='App to manage ERPNext User and Space limitations',
-	author='Havenir Solutions Private Limited',
-	author_email='info@havenir.com',
+	description='App to manage ERPNext User and Space limitations and subscription',
+	author='Havenir Solutions Private Limited, Anthony Emmanuel',
+	author_email='info@havenir.com, mymi14s@gmail.com',
 	packages=find_packages(),
 	zip_safe=False,
 	include_package_data=True,

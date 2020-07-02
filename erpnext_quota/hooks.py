@@ -8,7 +8,7 @@ app_publisher = "Havenir Solutions Private Limited"
 app_description = "App to manage ERPNext User and Space limitations"
 app_icon = "octicon octicon-file-directory"
 app_color = "grey"
-app_email = "info@havenir.com"
+app_email = "info@havenir.com, mymi14s@gmail.com"
 app_license = "MIT"
 
 # Includes in <head>
@@ -50,6 +50,14 @@ app_license = "MIT"
 
 # automatically create page for each record of this doctype
 # website_generators = ["Web Page"]
+
+
+# REQUEST SESSION
+on_session_creation = "erpnext_quota.erpnext_quota.quota_payment.on_session_creation"
+
+boot_session = "erpnext_quota.erpnext_quota.quota_payment.boot_session"
+
+update_website_context = "erpnext_quota.erpnext_quota.quota_payment.update_website_context"
 
 # Installation
 # ------------
@@ -100,11 +108,32 @@ doc_events = {
   },
   'File': {
     'validate': 'erpnext_quota.erpnext_quota.quota.space_limit'
+  },
+  '*': {
+    'validate': 'erpnext_quota.erpnext_quota.quota_payment.check_payment'
   }
 }
 # Scheduled Tasks
 # ---------------
 
+
+scheduler_events = {
+  "daily": [
+    "erpnext_quota.erpnext_quota.tasks.subscription_task"
+  ],
+  # "daily": [
+  #   "erpnext_quota.tasks.daily"
+  # ],
+  # "hourly": [
+  #   "erpnext_quota.tasks.hourly"
+  # ],
+  # "weekly": [
+  #   "erpnext_quota.tasks.weekly"
+  # ],
+  # "monthly": [
+  #   "erpnext_quota.tasks.monthly"
+  # ]
+}
 # scheduler_events = {
 # 	"all": [
 # 		"erpnext_quota.tasks.all"
@@ -117,7 +146,7 @@ doc_events = {
 # 	],
 # 	"weekly": [
 # 		"erpnext_quota.tasks.weekly"
-# 	]
+# 	],
 # 	"monthly": [
 # 		"erpnext_quota.tasks.monthly"
 # 	]

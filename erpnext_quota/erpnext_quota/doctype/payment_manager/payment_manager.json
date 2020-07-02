@@ -1,0 +1,79 @@
+{
+ "creation": "2020-06-25 01:50:20.135971",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "switch",
+  "paid",
+  "subscription_type",
+  "month",
+  "year",
+  "expire"
+ ],
+ "fields": [
+  {
+   "fieldname": "switch",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Switch",
+   "options": "Freeze\nUnfreeze",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "paid",
+   "fieldtype": "Select",
+   "label": "Paid",
+   "options": "Paid\nNot Paid",
+   "reqd": 1
+  },
+  {
+   "depends_on": "subscription_type",
+   "fieldname": "month",
+   "fieldtype": "Select",
+   "label": "Month",
+   "options": "January\nFebruary\nMarch\nApril\nMay\nJune\nJuly\nAugust\nSeptember\nOctober\nNovember\nDecember"
+  },
+  {
+   "fieldname": "expire",
+   "fieldtype": "Date",
+   "label": "Expire",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subscription_type",
+   "fieldtype": "Select",
+   "label": "Subscription Type",
+   "options": "Monthly\nYearly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Select",
+   "label": "Year",
+   "options": "2019\n2020\n2021\n2022\n2023\n2024\n2025\n2026\n2027\n2028\n2029\n2030\n2031\n2032\n2033\n2034\n2035\n2036\n2037\n2038\n2039\n2040\n2041\n2042\n2043\n2044\n2045\n2046\n2047\n2048\n2049\n2050"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-07-02 22:43:03.467580",
+ "modified_by": "Administrator",
+ "module": "Erpnext Quota",
+ "name": "Payment Manager",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
